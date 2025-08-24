@@ -41,6 +41,7 @@ const loginUser = async (req,res,next) => {
             _id: user.id,
             name: user.name,
             email: user.email,
+            password: user.password,
             token: genrateToken(user._id)
          });
       } else{

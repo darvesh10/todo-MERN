@@ -18,9 +18,8 @@ app.use(cors());
 app.get('/',(req,res)=>{
     res.send("this is a page");
 })
-app.use("/todo",authRoutes)
-app.use('/',todoRoutes);
-
+app.use("/auth", authRoutes);
+app.use("/todo", todoRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

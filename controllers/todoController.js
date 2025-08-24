@@ -31,6 +31,9 @@ const getTodos = async (req, res, next) => {
 // Update
 const updateTodo = async (req, res, next) => {
   try {
+    if (!req.params.id) {
+      return res.status(400).json({ success: false, message: "Todo ID required" });
+    }
     const todoId = req.params.id;
     const userId = req.user._id;
 

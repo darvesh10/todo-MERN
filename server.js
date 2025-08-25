@@ -6,6 +6,8 @@ const {connectDB} = require('./config/db')
 const authRoutes = require('./routes/authRoutes');
 const todoRoutes = require("./routes/todoRoutes");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
+
 
 
 dotenv.config();
@@ -14,6 +16,8 @@ connectDB();
 
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
+
 
 app.get('/',(req,res)=>{
     res.send("this is a page");
